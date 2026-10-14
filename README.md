@@ -18,6 +18,14 @@ not passing functionality or repairs. This is a preservation-and-review baseline
 qualification**. The original PadSynth suite, run without the added marker, reports 45 passes and one failure.
 All original runtime files remain unchanged; source fixes were not silently applied during recovery.
 
+## New: TRIO programme
+
+[`trio/`](trio) plans three new, deliberately different synthesizers - **AURORA** (spectral pads),
+**LOOM** (waveguide strings) and **DRIFT** (granular air) - on a shared, tested foundation, built
+through dependency-ordered `[TRIO-0NN]` issues. See the [TRIO README](trio/README.md) and
+[implementation programme](trio/docs/programme/IMPLEMENTATION-PROGRAMME.md). The three folders
+below remain preserved reference material.
+
 ## Launch and isolation
 
 All three projects identify themselves internally as `padsynth` 0.1.0. **Use separate virtual environments

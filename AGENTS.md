@@ -13,3 +13,10 @@ Do not reinterpret xfails as success. Do not remove Nice Glitch's adaptation wit
 Do not commit virtual environments, dependency binaries, credentials, runtime locks, caches or bytecode.
 Use device-free OfflineEngine/null paths in ordinary CI. Real audio/MIDI/Windows Terminal acceptance is
 separate; do not claim it from headless tests. Retain source-linked Markdown with per-synth retrieval IDs.
+
+## New TRIO programme
+
+New synthesizer work lives in `trio/` and is governed by [`trio/AGENTS.md`](trio/AGENTS.md)
+and the `[TRIO-0NN]` GitHub issues. TRIO work must not modify `cpusynth/`, `padsynth/`,
+`niceglitchsynth/`, `evidence/`, `tools/validate.py`, `requirements-review.txt`, `REVIEW.md`
+or `.github/workflows/ci.yml`; it may read them as reference material.
