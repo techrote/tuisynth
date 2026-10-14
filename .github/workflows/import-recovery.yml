@@ -1,0 +1,77 @@
+name: Import recovered synth archives
+on:
+  push:
+    branches: ['import/three-synth-archives-20261014']
+    paths: ['.recovery/**', '.github/workflows/import-recovery.yml']
+permissions:
+  contents: write
+jobs:
+  import:
+    if: github.repository == 'techrote/tuisynth'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          ref: ${{ github.ref }}
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7
+        with:
+          python-version: '3.13'
+      - name: Decode and verify owner-supplied source transport
+        shell: bash
+        run: |
+          python - <<'PY'
+          import base64, hashlib, json, lzma
+          from pathlib import Path, PurePosixPath
+          root = Path.cwd()
+          paths = [root / '.recovery' / f'payload-{i:02d}.b64' for i in range(11)]
+          packed = base64.b64decode(b''.join(p.read_bytes() for p in paths), validate=True)
+          assert len(packed) == 95844
+          assert hashlib.sha256(packed).hexdigest() == '936c684e4ff1b995ee343ab0769e3c58a2fcbd5d72308c327e241b46bcbd508d'
+          dec = lzma.LZMADecompressor(memlimit=128*1024*1024)
+          raw = dec.decompress(packed, max_length=652516)
+          assert len(raw) == 652515 and dec.eof and not dec.unused_data
+          files = json.loads(raw)
+          assert len(files) == 120
+          allowed = {'cpusynth', 'padsynth', 'niceglitchsynth', 'tools', 'evidence', 'README.md', 'REVIEW.md', 'AGENTS.md', '.gitignore', '.gitattributes', 'requirements-review.txt'}
+          for rel, value in files.items():
+              p = PurePosixPath(rel)
+              assert not p.is_absolute() and '..' not in p.parts and '\\' not in rel
+              assert p.parts[0] in allowed and '.git' not in p.parts
+              dest = root.joinpath(*p.parts)
+              assert not dest.is_symlink() and root in dest.resolve().parents
+              assert set(value) in ({'utf8'}, {'base64'})
+              content = value['utf8'].encode('utf-8') if 'utf8' in value else base64.b64decode(value['base64'], validate=True)
+              dest.parent.mkdir(parents=True, exist_ok=True)
+              dest.write_bytes(content)
+          print('Restored 120 reviewed project/documentation/evidence files')
+          PY
+      - name: Reconstruct and verify original deterministic demo WAV
+        working-directory: padsynth
+        run: python padsynth.py --demo
+      - name: Check every original byte and remove transport
+        shell: bash
+        run: |
+          python tools/validate.py --verify-only
+          python - <<'PY'
+          import hashlib
+          from pathlib import Path
+          assert hashlib.sha256(Path('padsynth/demo-medley.wav').read_bytes()).hexdigest() == '61848a4723606b2675d82e9251d3db43fa0b6a4d7ba56e09ef7176cf09d2e7f2'
+          for i in range(11):
+              Path(f'.recovery/payload-{i:02d}.b64').unlink()
+          PY
+      - name: Commit source files to the dedicated import branch
+        shell: bash
+        env:
+          EXPECTED_HEAD: ${{ github.sha }}
+          BRANCH: ${{ github.ref_name }}
+        run: |
+          git config core.autocrlf false
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git diff --cached --quiet && exit 0
+          git commit -m 'Restore three synths with preserved originals, review tests and RAG documentation'
+          remote_head=$(git ls-remote origin "refs/heads/$BRANCH" | cut -f1)
+          test "$remote_head" = "$EXPECTED_HEAD" || { echo 'Branch advanced; refusing push'; exit 1; }
+          git push origin "HEAD:refs/heads/$BRANCH"
