@@ -1,16 +1,17 @@
 # [TRIO-005] Kit: computer keyboard piano and USB MIDI input
 
-Work in `techrote/tuisynth` on **TRIO-005** and complete it end-to-end: implementation,
-tests, pull request, CI fixes and merge after every automated check is green.
+Work in your local clone of `techrote/tuisynth` on **TRIO-005** and complete it end-to-end with the
+local workflow in `trio/AGENTS.md`: implementation, tests, local CI, fixes, review record and
+local squash-merge into `main` once every `trio/tools/ci.py` lane is green.
 
 ## Depends on
 
-- TRIO-003 (#4) must be closed.
+- TRIO-003 (#4) must be `done` in `trio/docs/programme/STATUS.md`.
 
 ## Read first
 
 1. `trio/AGENTS.md`
-2. This issue and all comments
+2. This issue file (`trio/docs/programme/issues/TRIO-005.md`) and its row in `STATUS.md`
 3. `trio/docs/rag/03-INPUT-CONTRACT.md` sections "Computer keyboard" and "USB MIDI"
 4. `trio/docs/rag/02-AUDIO-ENGINE-CONTRACT.md` section "Events"
 5. Reference only: `cpusynth/padsynth/midi.py`
@@ -61,7 +62,7 @@ from USB MIDI (parser, port handling, reconnect, CC learn), producing kit engine
 
 - No test opens a real MIDI port; CI does not install python-rtmidi.
 - All TRIO-INPUT "Computer keyboard" and "USB MIDI" behaviour implemented and tested.
-- `python trio/tools/check.py --package all` green; both CI workflows green.
+- `python trio/tools/ci.py` green on every lane.
 
 ## Out of scope
 

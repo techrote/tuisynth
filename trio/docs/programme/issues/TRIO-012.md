@@ -1,16 +1,17 @@
 # [TRIO-012] LOOM app: strum surface and vibrating strings
 
-Work in `techrote/tuisynth` on **TRIO-012** and complete it end-to-end: implementation,
-tests, pull request, CI fixes and merge after every automated check is green.
+Work in your local clone of `techrote/tuisynth` on **TRIO-012** and complete it end-to-end with the
+local workflow in `trio/AGENTS.md`: implementation, tests, local CI, fixes, review record and
+local squash-merge into `main` once every `trio/tools/ci.py` lane is green.
 
 ## Depends on
 
-- TRIO-008 (#9) and TRIO-011 (#12) must be closed.
+- TRIO-008 (#9) and TRIO-011 (#12) must be `done` in `trio/docs/programme/STATUS.md`.
 
 ## Read first
 
 1. `trio/AGENTS.md`
-2. This issue and all comments
+2. This issue file (`trio/docs/programme/issues/TRIO-012.md`) and its row in `STATUS.md`
 3. `trio/docs/rag/07-LOOM-SPEC.md` sections "Strum surface model", "UI" and the UI items under
    "Tests"
 4. `trio/docs/rag/00-CHARTER.md` (LOOM column and difference contract)
@@ -61,7 +62,7 @@ skins and the shared CLI.
 
 - Single-surface model (no tabs); strumming works by SGR drag in headless tests.
 - Matches the LOOM column of the difference contract.
-- `python trio/tools/check.py --package all` green; both CI workflows green.
+- `python trio/tools/ci.py` green on every lane.
 
 ## Out of scope
 

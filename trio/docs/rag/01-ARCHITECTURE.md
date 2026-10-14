@@ -15,7 +15,7 @@ trio/
   requirements-dev.txt           exact pins for CI and development
   tools/check.py                 single local/CI entry point (tests + packaging)
   docs/
-    PROVENANCE.md                model/tool attribution per merged PR
+    PROVENANCE.md                model/tool attribution per merged issue
     ACCEPTANCE.md                human-run audio/MIDI/terminal checklist (TRIO-017)
     programme/                   implementation programme and mirrored issue prompts
     rag/                         contracts (this corpus)

@@ -1,16 +1,17 @@
 # [TRIO-014] DRIFT app: weather map and grain particles
 
-Work in `techrote/tuisynth` on **TRIO-014** and complete it end-to-end: implementation,
-tests, pull request, CI fixes and merge after every automated check is green.
+Work in your local clone of `techrote/tuisynth` on **TRIO-014** and complete it end-to-end with the
+local workflow in `trio/AGENTS.md`: implementation, tests, local CI, fixes, review record and
+local squash-merge into `main` once every `trio/tools/ci.py` lane is green.
 
 ## Depends on
 
-- TRIO-008 (#9) and TRIO-013 (#14) must be closed.
+- TRIO-008 (#9) and TRIO-013 (#14) must be `done` in `trio/docs/programme/STATUS.md`.
 
 ## Read first
 
 1. `trio/AGENTS.md`
-2. This issue and all comments
+2. This issue file (`trio/docs/programme/issues/TRIO-014.md`) and its row in `STATUS.md`
 3. `trio/docs/rag/08-DRIFT-SPEC.md` sections "Field (performance) parameters", "UI" and the UI
    items under "Tests"
 4. `trio/docs/rag/00-CHARTER.md` (DRIFT column and difference contract)
@@ -62,7 +63,7 @@ strip, four skins and the shared CLI.
 
 - Full-screen map + drawers model; steering by SGR drag works in headless tests.
 - Matches the DRIFT column of the difference contract.
-- `python trio/tools/check.py --package all` green; both CI workflows green.
+- `python trio/tools/ci.py` green on every lane.
 
 ## Out of scope
 

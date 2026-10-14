@@ -65,5 +65,5 @@ a bundled Python runtime or `.exe` builder, multi-timbral MIDI, and microtonal t
 
 ## Licence and attribution
 
-No licence is selected for this repository. Do not add one. Every implementation PR records
+No licence is selected for this repository. Do not add one. Every implementation branch records
 the actual model/tool that wrote it in [../PROVENANCE.md](../PROVENANCE.md); never guess.

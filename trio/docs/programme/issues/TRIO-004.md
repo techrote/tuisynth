@@ -1,16 +1,17 @@
 # [TRIO-004] Kit: DSP building blocks
 
-Work in `techrote/tuisynth` on **TRIO-004** and complete it end-to-end: implementation,
-tests, pull request, CI fixes and merge after every automated check is green.
+Work in your local clone of `techrote/tuisynth` on **TRIO-004** and complete it end-to-end with the
+local workflow in `trio/AGENTS.md`: implementation, tests, local CI, fixes, review record and
+local squash-merge into `main` once every `trio/tools/ci.py` lane is green.
 
 ## Depends on
 
-- TRIO-001 (#2) must be closed. (Independent of TRIO-002/003; can run in parallel.)
+- TRIO-001 (#2) must be `done` in `trio/docs/programme/STATUS.md`. (Independent of TRIO-002/003; can run in parallel.)
 
 ## Read first
 
 1. `trio/AGENTS.md`
-2. This issue and all comments
+2. This issue file (`trio/docs/programme/issues/TRIO-004.md`) and its row in `STATUS.md`
 3. `trio/docs/rag/02-AUDIO-ENGINE-CONTRACT.md` sections "Fixed numbers", "DSP building blocks",
    "Performance"
 4. `trio/docs/rag/11-LESSONS-FROM-RECOVERY.md` row MOD-004
@@ -72,7 +73,7 @@ binding details:
 
 ## Acceptance criteria
 
-- All units implemented per contract and tests above green on both CI platforms.
+- All units implemented per contract and tests above green on every `trio/tools/ci.py` lane.
 - No per-sample Python loops in production code.
 
 ## Out of scope

@@ -1,16 +1,17 @@
 # [TRIO-015] Stretch: step sequencer and arpeggiator
 
-Work in `techrote/tuisynth` on **TRIO-015** and complete it end-to-end: implementation,
-tests, pull request, CI fixes and merge after every automated check is green.
+Work in your local clone of `techrote/tuisynth` on **TRIO-015** and complete it end-to-end with the
+local workflow in `trio/AGENTS.md`: implementation, tests, local CI, fixes, review record and
+local squash-merge into `main` once every `trio/tools/ci.py` lane is green.
 
 ## Depends on
 
-- TRIO-010 (#11), TRIO-012 (#13) and TRIO-014 (#15) must be closed.
+- TRIO-010 (#11), TRIO-012 (#13) and TRIO-014 (#15) must be `done` in `trio/docs/programme/STATUS.md`.
 
 ## Read first
 
 1. `trio/AGENTS.md`
-2. This issue and all comments
+2. This issue file (`trio/docs/programme/issues/TRIO-015.md`) and its row in `STATUS.md`
 3. `trio/docs/rag/09-SEQUENCER-MODULATION-SPEC.md` section "Sequencer and arpeggiator"
 4. `trio/docs/rag/02-AUDIO-ENGINE-CONTRACT.md` sections "Events" (frame offsets) and "Engine"
 5. `trio/docs/rag/00-CHARTER.md` section "Difference contract"
@@ -55,7 +56,7 @@ in that instrument's own visual language, without changing any existing behaviou
 
 - All earlier tests remain green unchanged.
 - Sequencer is visually distinct per instrument (difference contract).
-- `python trio/tools/check.py --package all` green; both CI workflows green.
+- `python trio/tools/ci.py` green on every lane.
 
 ## Out of scope
 

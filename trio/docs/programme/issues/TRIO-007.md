@@ -1,16 +1,17 @@
 # [TRIO-007] Kit: TUI canvas, mouse, widgets and headless driver
 
-Work in `techrote/tuisynth` on **TRIO-007** and complete it end-to-end: implementation,
-tests, pull request, CI fixes and merge after every automated check is green.
+Work in your local clone of `techrote/tuisynth` on **TRIO-007** and complete it end-to-end with the
+local workflow in `trio/AGENTS.md`: implementation, tests, local CI, fixes, review record and
+local squash-merge into `main` once every `trio/tools/ci.py` lane is green.
 
 ## Depends on
 
-- TRIO-002 (#3) and TRIO-006 (#7) must be closed.
+- TRIO-002 (#3) and TRIO-006 (#7) must be `done` in `trio/docs/programme/STATUS.md`.
 
 ## Read first
 
 1. `trio/AGENTS.md`
-2. This issue and all comments
+2. This issue file (`trio/docs/programme/issues/TRIO-007.md`) and its row in `STATUS.md`
 3. `trio/docs/rag/04-TUI-UX-CONTRACT.md` sections "Philosophy", "Rendering model", "Mouse model",
    "Widget set", "Headless test driver"
 4. `trio/docs/rag/05-SKINS-CONTRACT.md` sections "Required roles", "Colour depth"
@@ -73,7 +74,7 @@ bytes** so mouse behaviour is tested the way terminals actually deliver it.
 
 - Mouse tests use real SGR byte sequences through prompt_toolkit input, not direct method calls.
 - Widgets never import `trio_kit.engine`.
-- `python trio/tools/check.py --package all` green; both CI workflows green.
+- `python trio/tools/ci.py` green on every lane.
 
 ## Out of scope
 

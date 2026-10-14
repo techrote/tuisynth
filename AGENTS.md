@@ -17,6 +17,7 @@ separate; do not claim it from headless tests. Retain source-linked Markdown wit
 ## New TRIO programme
 
 New synthesizer work lives in `trio/` and is governed by [`trio/AGENTS.md`](trio/AGENTS.md)
-and the `[TRIO-0NN]` GitHub issues. TRIO work must not modify `cpusynth/`, `padsynth/`,
+and the `[TRIO-0NN]` issue files in `trio/docs/programme/issues/` (mirrored as GitHub issues
+#2-#18). TRIO work runs locally and must not modify `cpusynth/`, `padsynth/`,
 `niceglitchsynth/`, `evidence/`, `tools/validate.py`, `requirements-review.txt`, `REVIEW.md`
 or `.github/workflows/ci.yml`; it may read them as reference material.
