@@ -1,0 +1,71 @@
+schema = "md-editor-theme/1.1"
+id = "second-order-weather"
+name = "SECOND-ORDER WEATHER // ROIL"
+description = "Recolored fixture weather: teal, aqua, pink, purple. From sketchbook-10."
+fps = 20
+
+[palette]
+bg = "#04090f"
+fg = "#cfeef2"
+dim = "#4f7a86"
+border = "#123139"
+teal = "#2ad4c8"
+aqua = "#9ff3ea"
+pink = "#ff8fb0"
+purple = "#b06bff"
+blue = "#6d8bff"
+selbg = "#0a1820"
+warn = "#ff6b6b"
+ok = "#9ff3ea"
+
+[styles]
+background = { bg = "bg" }
+text = { fg = "fg" }
+muted = { fg = "dim" }
+border = { fg = "border" }
+title = { fg = "teal", bold = true }
+accent = { fg = "aqua" }
+heading = { fg = "pink", bold = true }
+code = { fg = "purple" }
+link = { fg = "aqua", underline = true }
+quote = { fg = "dim", italic = true }
+status = { fg = "ok" }
+warning = { fg = "warn" }
+error = { fg = "pink", bold = true }
+selected = { fg = "purple", bg = "selbg" }
+focused = { fg = "aqua", bold = true }
+hover = { fg = "teal" }
+pressed = { fg = "pink", bg = "selbg" }
+disabled = { fg = "dim" }
+
+[geometry]
+outer = [0, 0, 0, 0]
+border = 1
+divider = 1
+spacer = 0
+
+[glyphs.divider]
+symbols = ["-", "─"]
+on = "-"
+off = "-"
+
+[patterns.scanline]
+kind = "scanline"
+glyphs = [" ", "·"]
+density = 0.25
+period = [1, 3]
+
+[patterns.checker]
+kind = "checker"
+glyphs = [" ", "░"]
+density = 0.15
+period = [2, 2]
+
+[fallbacks.ascii]
+glyph = { divider = "-" }
+
+[fallbacks.monochrome]
+palette = { bg = "#000000", fg = "#ffffff", dim = "#888888" }
+
+[fallbacks.narrow]
+hide_layers = ["patterns.scanline"]

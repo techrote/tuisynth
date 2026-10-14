@@ -1,0 +1,52 @@
+{
+  "cpusynth": {
+    "exit_code": 0,
+    "setuptools": "82.0.1",
+    "wheel_members": [
+      "padsynth/__init__.py",
+      "padsynth/__main__.py",
+      "padsynth/demo.py",
+      "padsynth/midi.py",
+      "padsynth/param.py",
+      "padsynth/themes.py",
+      "padsynth/ui.py",
+      "padsynth/util.py",
+      "padsynth/engine/__init__.py",
+      "padsynth/engine/core.py",
+      "padsynth/engine/fx.py",
+      "padsynth/engine/synth.py",
+      "padsynth-0.1.0.dist-info/METADATA",
+      "padsynth-0.1.0.dist-info/WHEEL",
+      "padsynth-0.1.0.dist-info/entry_points.txt",
+      "padsynth-0.1.0.dist-info/top_level.txt",
+      "padsynth-0.1.0.dist-info/RECORD"
+    ]
+  },
+  "padsynth": {
+    "exit_code": 1,
+    "setuptools": "82.0.1"
+  },
+  "niceglitchsynth": {
+    "exit_code": 0,
+    "setuptools": "82.0.1",
+    "wheel_members": [
+      "padsynth/__init__.py",
+      "padsynth/__main__.py",
+      "padsynth/demo.py",
+      "padsynth/midi.py",
+      "padsynth/param.py",
+      "padsynth/themes.py",
+      "padsynth/ui.py",
+      "padsynth/util.py",
+      "padsynth/engine/__init__.py",
+      "padsynth/engine/core.py",
+      "padsynth/engine/fx.py",
+      "padsynth/engine/synth.py",
+      "padsynth-0.1.0.dist-info/METADATA",
+      "padsynth-0.1.0.dist-info/WHEEL",
+      "padsynth-0.1.0.dist-info/entry_points.txt",
+      "padsynth-0.1.0.dist-info/top_level.txt",
+      "padsynth-0.1.0.dist-info/RECORD"
+    ]
+  }
+}

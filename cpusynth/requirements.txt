@@ -1,0 +1,4 @@
+prompt_toolkit>=3.0.40
+numpy>=1.26
+sounddevice>=0.4.6
+python-rtmidi>=1.5.0

@@ -1,0 +1,114 @@
+{
+  "schema": "tuisynth-import/1",
+  "synth": "padsynth",
+  "archive": "padsynth.zip",
+  "archive_sha256": "419d4f504cbaa01eaeb46e3c58050466a6cca9cc015a365ba1a10bef8f139b67",
+  "origin": "Owner upload in this conversation, 2026-10-14",
+  "model_attribution": "Unverified; owner identifies OpenCode free-tier provenance.",
+  "retained_count": 19,
+  "excluded_file_counts": {
+    ".padsynth": 2,
+    ".pytest_cache": 5,
+    ".ruff_cache": 4,
+    ".venv": 1294,
+    "__pycache__": 2
+  },
+  "exclusion_policy": "Do not publish machine-specific virtual environments, native dependency binaries, empty nested Git metadata, bytecode, caches or runtime locks/session state.",
+  "retained_files": [
+    {
+      "path": "0Start.cmd",
+      "bytes": 777,
+      "sha256": "6ff6a3f698a05a320ba58e6dffaccc1457da2e6a4f3dcdb6f758dcc0209aaa5b"
+    },
+    {
+      "path": "1Setup.cmd",
+      "bytes": 634,
+      "sha256": "8ed41edec168f2c81475b938ce9315df0bdcb64348927643f508aa937e981911"
+    },
+    {
+      "path": "demo-medley.wav",
+      "bytes": 1481804,
+      "sha256": "61848a4723606b2675d82e9251d3db43fa0b6a4d7ba56e09ef7176cf09d2e7f2"
+    },
+    {
+      "path": "padsynth.conf",
+      "bytes": 1349,
+      "sha256": "f68ad084472b11992fc9566856622db6a6ed42bd9a39b681837a8575929b4991"
+    },
+    {
+      "path": "padsynth.py",
+      "bytes": 164805,
+      "sha256": "11edee830f1e7df5d0e8a85a8888dc607053298316a6d1be5950bacfaa1da648"
+    },
+    {
+      "path": "patches/amber-strike.json",
+      "bytes": 1925,
+      "sha256": "d3f239bdf51e72618f321033e721835d73c71c146fdd8c6918f6dc3e2d0b8f60"
+    },
+    {
+      "path": "patches/cyan-fog.json",
+      "bytes": 1915,
+      "sha256": "d9f350e51c8da54d6e5e72f25e71e205d76ca976f44553c159ba36c7771be0f8"
+    },
+    {
+      "path": "patches/ion-cell.json",
+      "bytes": 1912,
+      "sha256": "0e37451df21bab91db91e0c330ffb9351f26ebec32f070db30e19ca36113e7f5"
+    },
+    {
+      "path": "patches/needle-rain.json",
+      "bytes": 1910,
+      "sha256": "38e9f394891d21d6d3c469c40d089785754eb3c2a71b781935280bbd5200f45a"
+    },
+    {
+      "path": "patches/weather-machine.json",
+      "bytes": 1930,
+      "sha256": "bea94d70e774da70ac9600302d7e8213e71ed1f0499e6146d4b0566f37bc5a9c"
+    },
+    {
+      "path": "pianosweep.txt",
+      "bytes": 32,
+      "sha256": "ce6a09b6c31099148c7326280e2d5b27ec9b9e7467f4b57eeea255dcbfb723c4"
+    },
+    {
+      "path": "pianosweep2.txt",
+      "bytes": 538,
+      "sha256": "4dc10c4cb5a0eabf6375ee7272b8abd1e03f24f76a14d05ca174f01202d4bb28"
+    },
+    {
+      "path": "pyproject.toml",
+      "bytes": 522,
+      "sha256": "06f6aa848382dcceba474228f9a4f4dca37ce950c1ef913febb6e72bc8795201"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 26,
+      "sha256": "2b781f6bf7e9eaa128384b298967f26f5e308c2d693edd0f4b637abbe05ed5f8"
+    },
+    {
+      "path": "tests/test_padsynth.py",
+      "bytes": 25831,
+      "sha256": "40ef6db3fe92e8f3e6d28e6bb605f2b507db6dabd1e2b66a9c421b9c22ccb2a3"
+    },
+    {
+      "path": "themes/aqua-pink.theme",
+      "bytes": 2643,
+      "sha256": "e65729affd73513a22b250bd1a9d1c207a3c02cf017a01eda420fafd8dad4130"
+    },
+    {
+      "path": "themes/neon-circuitry.theme",
+      "bytes": 2659,
+      "sha256": "6b673485e56c99d0647c5949ca878c8b7cc0683bb607c0b415689935fa70291b"
+    },
+    {
+      "path": "themes/purpleblue-engine.theme",
+      "bytes": 2647,
+      "sha256": "d28c3fca3d54b34720550ab4c70b6ec0512426b836fffbee69390bfbd8b498aa"
+    },
+    {
+      "path": "themes/teal-core.theme",
+      "bytes": 2660,
+      "sha256": "52a4409725efda79a1126a6a7a6a9f3e317a4595877194b9ba6fd2cb80e2354b"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "name": "Upper Air",
+  "char": "air",
+  "morph": 0.0,
+  "a": {
+    "osc.wave": 0.05, "osc.unison": 4, "osc.detune": 18, "osc.sub": 0.05, "osc.noise": 0.5,
+    "filter.mode": 1, "filter.cut": 1300, "filter.res": 0.3, "filter.envd": 0.7, "filter.key": 0.5,
+    "amp.a": 4.0, "amp.d": 3.0, "amp.s": 0.8, "amp.r": 6.0, "amp.vel": 0.2,
+    "flt.a": 5.0, "flt.d": 3.5, "flt.s": 0.6, "flt.r": 6.0, "flt.amt": 0.7,
+    "l1.rate": 0.06, "l1.wave": 0, "l1.tgt": 1, "l1.dep": 0.8,
+    "l2.rate": 0.14, "l2.wave": 1, "l2.tgt": 2, "l2.dep": 0.5,
+    "pan.base": 0.0, "pan.spread": 0.8,
+    "fx.chorus.mix": 0.2, "fx.chorus.rate": 0.5, "fx.chorus.depth": 0.005,
+    "fx.delay.time": 0.75, "fx.delay.fb": 0.35, "fx.delay.mix": 0.22,
+    "fx.reverb.size": 1.4, "fx.reverb.damp": 0.3, "fx.reverb.mix": 0.62,
+    "master.level": 0.85, "master.drive": 0.1
+  },
+  "b": {
+    "osc.wave": 0.1, "osc.unison": 5, "osc.detune": 26, "osc.sub": 0.1, "osc.noise": 0.65,
+    "filter.mode": 1, "filter.cut": 2400, "filter.res": 0.35, "filter.envd": 0.8, "filter.key": 0.55,
+    "amp.a": 6.0, "amp.d": 4.0, "amp.s": 0.85, "amp.r": 8.0, "amp.vel": 0.15,
+    "flt.a": 7.0, "flt.d": 4.5, "flt.s": 0.7, "flt.r": 8.0, "flt.amt": 0.85,
+    "l1.rate": 0.05, "l1.wave": 1, "l1.tgt": 1, "l1.dep": 0.9,
+    "l2.rate": 0.1, "l2.wave": 0, "l2.tgt": 2, "l2.dep": 0.7,
+    "pan.base": 0.0, "pan.spread": 0.9,
+    "fx.chorus.mix": 0.3, "fx.chorus.rate": 0.7, "fx.chorus.depth": 0.006,
+    "fx.delay.time": 1.0, "fx.delay.fb": 0.4, "fx.delay.mix": 0.3,
+    "fx.reverb.size": 1.55, "fx.reverb.damp": 0.28, "fx.reverb.mix": 0.72,
+    "master.level": 0.88, "master.drive": 0.12
+  },
+  "macros": {
+    "filter.cut": 19000.0,
+    "osc.noise": 0.8,
+    "fx.reverb.size": 1.4,
+    "amp.a": 9.0
+  }
+}

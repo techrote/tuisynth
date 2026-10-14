@@ -1,0 +1,12 @@
+..................xxxxxxxx.............................................. [ 98%]
+.                                                                        [100%]
+=========================== short test summary info ============================
+XFAIL tests/test_review.py::test_discrete_morph_selects_a_below_midpoint - MOD-001: discrete morph interpolates below midpoint
+XFAIL tests/test_review.py::test_note_off_after_transpose_releases_original_voice - MOD-002: note-off uses new transpose rather than note-on identity
+XFAIL tests/test_review.py::test_offline_render_preserves_partial_block_remainder - MOD-003: partial offline render discards block remainder
+XFAIL tests/test_review.py::test_delay_line_reads_chronological_history - MOD-004: delay taps run backwards through history
+XFAIL tests/test_review.py::test_callback_defensively_fills_oversized_output - MOD-005: oversized callback tail is not filled; fixed BLOCK is the normal stream contract
+XFAIL tests/test_review.py::test_nonfinite_patch_is_rejected_before_live_dsp - MOD-006: preset numeric values are not validated for finiteness
+XFAIL tests/test_review.py::test_demo_generates_only_valid_midi_notes - MOD-007: demo adds 72 to already-absolute MIDI notes
+XFAIL tests/test_review.py::test_two_same_pitch_releases_release_both_voices - MOD-008: overlapping same-pitch note-offs repeatedly find the releasing first voice
+65 passed, 8 xfailed in 1.51s

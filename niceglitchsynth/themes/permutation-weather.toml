@@ -1,0 +1,70 @@
+schema = "md-editor-theme/1.1"
+id = "permutation-weather"
+name = "PERMUTATION WEATHER // CDMA"
+description = "Magenta, rust, cyan, yellow on deep void. From sketch-journal-05."
+fps = 20
+
+[palette]
+bg = "#080404"
+fg = "#e6d5cf"
+dim = "#7c5a55"
+border = "#2e1a17"
+magenta = "#ff2f92"
+rust = "#ff6b35"
+cyan = "#38f2ff"
+yellow = "#ffd447"
+selbg = "#1a0b0c"
+warn = "#ffd447"
+ok = "#38f2ff"
+
+[styles]
+background = { bg = "bg" }
+text = { fg = "fg" }
+muted = { fg = "dim" }
+border = { fg = "border" }
+title = { fg = "cyan", bold = true }
+accent = { fg = "rust" }
+heading = { fg = "magenta", bold = true }
+code = { fg = "yellow" }
+link = { fg = "cyan", underline = true }
+quote = { fg = "dim", italic = true }
+status = { fg = "ok" }
+warning = { fg = "warn" }
+error = { fg = "magenta", bold = true }
+selected = { fg = "magenta", bg = "selbg" }
+focused = { fg = "yellow", bold = true }
+hover = { fg = "cyan" }
+pressed = { fg = "rust", bg = "selbg" }
+disabled = { fg = "dim" }
+
+[geometry]
+outer = [0, 0, 0, 0]
+border = 1
+divider = 1
+spacer = 0
+
+[glyphs.divider]
+symbols = ["-", "─"]
+on = "-"
+off = "-"
+
+[patterns.scanline]
+kind = "scanline"
+glyphs = [" ", "·"]
+density = 0.3
+period = [1, 2]
+
+[patterns.dropout]
+kind = "dropout"
+glyphs = [" ", "░"]
+density = 0.08
+period = [2, 2]
+
+[fallbacks.ascii]
+glyph = { divider = "-" }
+
+[fallbacks.monochrome]
+palette = { bg = "#000000", fg = "#ffffff", dim = "#888888" }
+
+[fallbacks.narrow]
+hide_layers = ["patterns.scanline"]

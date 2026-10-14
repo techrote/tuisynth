@@ -1,0 +1,143 @@
+schema = "md-editor-theme/1.1"
+id = "purpleblue-engine"
+name = "05 · Purpleblue Engine"
+description = "Indigo machine room with cobalt rails and ice-blue signal returns."
+seed = 5503
+seed_mode = "fixed"
+fps = 12
+
+[palette]
+paper = "#090b1c"
+ink = "#f2f3ff"
+muted = "#8a93b8"
+frame = "#28378a"
+accent = "#7f93ff"
+code = "#b9c0ff"
+link = "#57a9ff"
+violet = "#8d7dff"
+amber = "#cfe8ff"
+
+[ramps.pulse]
+colours = ["#28378a", "#7f93ff", "#8d7dff"]
+steps = 16
+
+[geometry]
+outer = [0, 0, 0, 0]
+border = 1
+divider = 0
+spacer = 0
+
+[styles.trace]
+fg = "#28378a"
+bg = "paper"
+[styles.node]
+fg = "violet"
+bg = "paper"
+[styles.pulse]
+fg = "accent"
+bg = "paper"
+[styles.inner]
+fg = "#233064"
+bg = "paper"
+
+[art.module]
+rows = ["╭─┬──╮   ┌─┐", "│ ▪  ├───┤∙│", "╰────╯   └─┘"]
+style = "trace"
+[motifs.module]
+art = "module"
+gap = [6, 2]
+
+[patterns.backbone]
+kind = "stepped-path"
+glyphs = ["─", "┼", "│"]
+period = [11, 4]
+style = "trace"
+[patterns.nodes]
+kind = "scatter"
+glyphs = ["▪", "+", "·"]
+period = [8, 3]
+density = 0.035
+style = "node"
+[patterns.inner]
+kind = "ladders"
+glyphs = ["│", "─"]
+period = [12, 4]
+style = "inner"
+[patterns.silent]
+kind = "grid"
+glyphs = ["·"]
+period = [14, 5]
+style = "inner"
+
+[[layers]]
+id = "backbone"
+slot = "outer"
+pattern = "backbone"
+mode = "transparent-cell"
+[[layers]]
+id = "modules"
+slot = "outer"
+motif = "module"
+mode = "underlay"
+[[layers]]
+id = "signal-nodes"
+slot = "outer"
+pattern = "nodes"
+mode = "transparent-cell"
+[[layers]]
+id = "edit-rails"
+slot = "tile.edit.chrome"
+pattern = "inner"
+mode = "transparent-cell"
+[[layers]]
+id = "view-rails"
+slot = "tile.view.chrome"
+pattern = "inner"
+mode = "transparent-cell"
+[[layers]]
+id = "tree-rails"
+slot = "tile.filesystem.chrome"
+pattern = "inner"
+mode = "transparent-cell"
+[[layers]]
+id = "contents-rails"
+slot = "tile.contents.chrome"
+pattern = "inner"
+mode = "transparent-cell"
+[[layers]]
+id = "immersive-grid"
+slot = "behind-content"
+pattern = "silent"
+mode = "underlay"
+
+[[rules]]
+target = "layer.signal-nodes"
+cue = "audition-start"
+set = { style = "pulse", density = 0.12 }
+[[rules]]
+target = "layer.edit-rails"
+states = ["focused", "dirty"]
+set = { style = "node" }
+
+[[animations]]
+id = "node-breathe"
+target = "layer.signal-nodes"
+property = "density"
+values = [0.02, 0.035, 0.05, 0.035]
+duration = 8.0
+loop = true
+
+[[variants]]
+when = { max_width = 72 }
+hide_layers = ["modules"]
+
+[fallbacks.ascii]
+glyph = "+"
+[fallbacks.monochrome]
+glyph = "."
+hide_layers = ["signal-nodes"]
+[fallbacks.narrow]
+glyph = "."
+hide_layers = ["modules", "signal-nodes"]
+[fallbacks.reduced_motion]
+glyph = "."

@@ -1,0 +1,75 @@
+schema = "md-editor-theme/1.1"
+id = "cyber-weather"
+name = "CYBER WEATHER // RNS"
+description = "Abyss-navy microfront atlas: cyan, cobalt, UV, amber. From sketch-journal-08."
+fps = 20
+seed_mode = "session"
+
+[palette]
+bg = "#05070b"
+fg = "#c9d7ea"
+dim = "#5b6b8c"
+border = "#27324d"
+cyan = "#38f2ff"
+cobalt = "#5a8bff"
+uv = "#7c6bff"
+violet = "#b06bff"
+amber = "#ffc857"
+selbg = "#0c1626"
+warn = "#ff6b6b"
+ok = "#6dffb8"
+
+[styles]
+background = { bg = "bg" }
+text = { fg = "fg" }
+muted = { fg = "dim" }
+border = { fg = "border" }
+title = { fg = "cyan", bold = true }
+accent = { fg = "cyan" }
+heading = { fg = "cobalt", bold = true }
+code = { fg = "violet" }
+link = { fg = "cyan", underline = true }
+quote = { fg = "dim", italic = true }
+status = { fg = "ok" }
+warning = { fg = "warn" }
+error = { fg = "amber", bold = true }
+selected = { fg = "uv", bg = "selbg" }
+focused = { fg = "amber", bold = true }
+hover = { fg = "cyan" }
+pressed = { fg = "amber", bg = "selbg" }
+disabled = { fg = "dim" }
+
+[geometry]
+outer = [0, 0, 0, 0]
+border = 1
+divider = 1
+spacer = 0
+
+[glyphs.divider]
+symbols = ["-", "─"]
+on = "-"
+off = "-"
+
+[patterns.scanline]
+kind = "scanline"
+glyphs = [" ", "·"]
+density = 0.3
+period = [1, 3]
+
+[patterns.rails]
+kind = "rails"
+glyphs = [" ", "░"]
+density = 0.12
+period = [3, 1]
+
+[variants]
+narrow = { when = "narrow", palette = "bg" }
+
+[fallbacks.ascii]
+glyph = { divider = "-" }
+
+[fallbacks.monochrome]
+palette = { bg = "#000000", fg = "#ffffff", dim = "#888888" }
+
+[fallbacks.narrow]
+hide_layers = ["patterns.scanline"]

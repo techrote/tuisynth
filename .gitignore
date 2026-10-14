@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+.padsynth/
+*.pyc
+*.egg-info/
+build/
+dist/
+evidence/ci/
+.review-venv/
