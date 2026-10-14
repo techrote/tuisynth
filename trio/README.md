@@ -2,7 +2,9 @@
 
 **Status: planned.** This folder holds the design authority and implementation programme for
 three new, deliberately different TUI synthesizers on a shared foundation. Code arrives
-through the dependency-ordered `[TRIO-0NN]` GitHub issues.
+through the dependency-ordered `[TRIO-0NN]` issues in
+[docs/programme/issues/](docs/programme/issues), executed locally by coding agents (progress in
+[STATUS.md](docs/programme/STATUS.md)).
 
 | Instrument | Sound | Synthesis | Signature gesture |
 |---|---|---|---|
@@ -21,6 +23,7 @@ post-processing rack.
 - [Implementation programme and issue catalogue](docs/programme/IMPLEMENTATION-PROGRAMME.md)
 - [RAG index](docs/rag/INDEX.md)
 - [Agent execution contract](AGENTS.md)
+- [Local workflow and models](docs/rag/12-LOCAL-WORKFLOW-AND-MODELS.md)
 - [Provenance ledger](docs/PROVENANCE.md)
 
 The preserved recovered synths (`../cpusynth`, `../padsynth`, `../niceglitchsynth`) are

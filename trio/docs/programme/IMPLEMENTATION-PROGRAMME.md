@@ -4,13 +4,15 @@
 
 Deliver three radically different terminal pad / air / string synthesizers - **AURORA**
 (spectral PADsynth pads), **LOOM** (waveguide strings) and **DRIFT** (granular air) - on a
-shared, tested foundation (`trio_kit`), through dependency-ordered GitHub issues that an
-autonomous coding agent (including OpenCode free-tier models) can complete end-to-end:
-implementation, tests, PR, CI fixes and merge after automated checks.
+shared, tested foundation (`trio_kit`), through dependency-ordered issues that an
+autonomous coding agent (OpenCode free-tier models or local LM Studio models) can complete
+end-to-end inside a development VM: implementation, tests, local CI, fixes, review record and
+squash-merge into the local `main` after automated checks.
 
-Every issue body is an **execution prompt**. Its text is mirrored in
-[`issues/`](issues) so agents can read it offline; the GitHub issue (with its comments) is the
-authority if they differ.
+Every issue file in [`issues/`](issues) is an **execution prompt** and is the authority the
+agent executes; progress is tracked in [`STATUS.md`](STATUS.md). The same prompts are mirrored
+as GitHub issues `techrote/tuisynth` #2-#18 for reference only. No GitHub access, credentials
+or paid services are needed (see [12-LOCAL-WORKFLOW-AND-MODELS.md](../rag/12-LOCAL-WORKFLOW-AND-MODELS.md)).
 
 ## Initial plan (v0)
 
@@ -32,7 +34,7 @@ authority if they differ.
 | R7 | Mouse acceptance failed headlessly (PAD-001) and was never tested with real SGR input. | Headless driver that injects real SGR sequences; golden screen snapshots; manual Windows Terminal checklist. |
 | R8 | Limiter/"never crash" claims were asserted, not tested. | Ceiling and non-finite guard tested on hot input and every preset; skin loader hostile-input corpus. |
 | R9 | CI could not exercise audio/MIDI hardware and no one said so. | Device-free CI with explicit skips; `docs/ACCEPTANCE.md` for humans; nothing claims hardware results. |
-| R10 | Model provenance was lost. | Mandatory `PROVENANCE.md` row per PR with the tool-reported model id. |
+| R10 | Model provenance was lost. | Mandatory `PROVENANCE.md` row per issue branch with the tool-reported model id. |
 | R11 | Agents could merge red builds or modify preserved originals. | `trio/AGENTS.md` merge contract: every check green, fix budget, stop conditions, preserved paths forbidden. |
 | R12 | Terminals send no key-up events, so keyboard notes either stick or cut short. | Timed gates with auto-repeat extension, a latch mode, and true note-off from the on-screen keyboard and MIDI. |
 
@@ -47,6 +49,20 @@ authority if they differ.
 | R17 | Performance gates on hosted runners are noisy. | Only a generous 20 s gate for 4 s of audio; real-time headroom is a manual acceptance item. |
 | R18 | Stretch goals could destabilise the core before it ships. | Stretch issues depend on all three UIs being merged and must keep every earlier test green; release does not depend on them. |
 | R19 | Free-tier agents lose context with long documents. | Each issue lists exactly which RAG sections to read; prompts are mirrored as files; AGENTS.md has a short free-tier section. |
+
+## Review round 3 (local-only execution)
+
+The owner decided that agents must clone, develop and run CI locally in the VM with no GitHub
+credentials, using only OpenCode free-tier models (no login) and LM Studio models served from
+the host GPUs.
+
+| # | Finding | Improvement |
+|---|---|---|
+| R20 | Without GitHub there are no pull requests, hosted checks or issue comments to gate merges. | `trio/tools/ci.py` (created by TRIO-001) reproduces `ci.yml` and `trio.yml` locally and is the merge gate; a review record per issue replaces the PR description. |
+| R21 | Without issue state, agents cannot see which dependencies are merged. | `STATUS.md` ledger: each agent updates only its own row (`todo`/`in-progress`/`done`/`blocked`). |
+| R22 | The VM is Linux, so the Windows CI job no longer runs per issue. | The orchestrator runs `ci.py` on the Windows host at milestones (after TRIO-008, each UI, and before the release tag). |
+| R23 | Local models are smaller and slower than hosted ones and context is limited by VRAM. | Single-GPU model roster with measured context and speed, per-issue model assignment, and an independent-review pass by a second model ([TRIO-LOCAL](../rag/12-LOCAL-WORKFLOW-AND-MODELS.md)). |
+| R24 | Release publication needed GitHub. | TRIO-017 creates a local annotated tag and checksummed wheels in `trio/dist/`; publishing is a later human step. |
 
 ## Improved target architecture
 
@@ -116,23 +132,25 @@ are already merged.
 
 ## Definition of done (every issue)
 
-- Dependencies closed; live `main` reconciled; issue comments read.
+- Dependencies `done` in `STATUS.md`; branch rebased on current local `main`.
 - All in-scope behaviour implemented exactly as specified by the issue and its RAG sections.
 - Tests for every acceptance criterion; `python trio/tools/check.py --package all` green
   locally; no preserved file changed.
-- RAG documents updated in the same PR if a contract changed.
-- `PROVENANCE.md` row added.
-- PR opened per `trio/AGENTS.md`, CI monitored and fixed within the fix budget, squash-merged
-  only with every check green, post-merge `main` verified.
+- RAG documents updated on the same branch if a contract changed.
+- `PROVENANCE.md` row and review record `reviews/TRIO-0NN.md` added; `STATUS.md` row `done`.
+- `python trio/tools/ci.py` green on every lane within the fix budget, squash-merged into local
+  `main` per `trio/AGENTS.md`, post-merge `ci.py` on `main` green.
 - No claim of audio-device, MIDI-hardware or real-terminal acceptance from CI.
 
 ## v0.1 release gate (TRIO-017)
 
-- All of TRIO-001..014 merged; TRIO-015/016 merged or explicitly deferred in the release notes.
-- `trio.yml` green on Linux and Windows for the release commit, including `--packaging`.
+- All of TRIO-001..014 `done`; TRIO-015/016 `done` or explicitly deferred in the release notes.
+- `python trio/tools/ci.py` green in the VM (Linux) and in the Windows-host milestone lane for
+  the release commit, including `--packaging`.
 - Each instrument: `--selftest` passes from an installed wheel in a clean venv; all factory
   presets and skins load; golden snapshots pass; every difference-contract row demonstrably
   distinct (screenshots in docs from `--snapshot`-style text renders).
 - `docs/ACCEPTANCE.md` exists with the manual checklist; results are recorded only when a
   human performs them.
-- `PROVENANCE.md` complete for every merged PR.
+- `PROVENANCE.md` complete for every `done` issue; local tag `trio-v0.1.0` and
+  `trio/dist/trio-v0.1.0/SHA256SUMS` produced by `trio/tools/release.py`.

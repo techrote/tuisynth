@@ -32,8 +32,8 @@ Read the original finding before implementing its TRIO counterpart.
 | Theme hardening gaps | Hostile nested theme data not covered | Skin loader never raises; hostile-file test corpus | TRIO-006 |
 | `filter.envd` unused param | Registered control with no audible path | Every registered param must be read by DSP or UI; registry coverage test per instrument | TRIO-009, TRIO-011, TRIO-013 |
 | MOD-PKG-001 / PAD-PKG-001 | Wheels omitted data / discovery failed | `src/` layout, explicit package data, clean-venv install + `--selftest` in CI | TRIO-001, TRIO-017 |
-| Unattributed model provenance | Builds could not be attributed | `PROVENANCE.md` row per PR with the tool-reported model id | every issue |
-| Original suite red on arrival | One pre-existing test failed | Every PR merges only with all CI checks green on Linux and Windows | every issue |
+| Unattributed model provenance | Builds could not be attributed | `PROVENANCE.md` row per issue branch with the tool-reported model id | every issue |
+| Original suite red on arrival | One pre-existing test failed | Every issue merges only with every local `ci.py` lane green; Windows lane at milestones | every issue |
 
 ## Things the recovered synths did well (keep them)
 

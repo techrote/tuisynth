@@ -1,16 +1,17 @@
 # [TRIO-002] Kit: parameter registry, validation and presets
 
-Work in `techrote/tuisynth` on **TRIO-002** and complete it end-to-end: implementation,
-tests, pull request, CI fixes and merge after every automated check is green.
+Work in your local clone of `techrote/tuisynth` on **TRIO-002** and complete it end-to-end with the
+local workflow in `trio/AGENTS.md`: implementation, tests, local CI, fixes, review record and
+local squash-merge into `main` once every `trio/tools/ci.py` lane is green.
 
 ## Depends on
 
-- TRIO-001 (#2) must be closed.
+- TRIO-001 (#2) must be `done` in `trio/docs/programme/STATUS.md`.
 
 ## Read first
 
 1. `trio/AGENTS.md`
-2. This issue and all comments
+2. This issue file (`trio/docs/programme/issues/TRIO-002.md`) and its row in `STATUS.md`
 3. `trio/docs/rag/02-AUDIO-ENGINE-CONTRACT.md` sections "Parameters" and "Presets"
 4. `trio/docs/rag/01-ARCHITECTURE.md` section "Configuration and user data"
 5. `trio/docs/rag/11-LESSONS-FROM-RECOVERY.md` rows MOD-001, MOD-006, PAD-002
@@ -70,7 +71,7 @@ atomic saves, used by every instrument.
 
 - No hostile input raises anything other than `ParamError`/`PresetError`.
 - Every behaviour in TRIO-ENGINE "Parameters" and "Presets" is implemented and tested.
-- `python trio/tools/check.py --package all` green; both CI workflows green.
+- `python trio/tools/ci.py` green on every lane.
 
 ## Out of scope
 

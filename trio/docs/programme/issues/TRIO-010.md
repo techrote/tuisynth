@@ -1,16 +1,17 @@
 # [TRIO-010] AURORA app: harmonic painter and aurora waterfall
 
-Work in `techrote/tuisynth` on **TRIO-010** and complete it end-to-end: implementation,
-tests, pull request, CI fixes and merge after every automated check is green.
+Work in your local clone of `techrote/tuisynth` on **TRIO-010** and complete it end-to-end with the
+local workflow in `trio/AGENTS.md`: implementation, tests, local CI, fixes, review record and
+local squash-merge into `main` once every `trio/tools/ci.py` lane is green.
 
 ## Depends on
 
-- TRIO-008 (#9) and TRIO-009 (#10) must be closed.
+- TRIO-008 (#9) and TRIO-009 (#10) must be `done` in `trio/docs/programme/STATUS.md`.
 
 ## Read first
 
 1. `trio/AGENTS.md`
-2. This issue and all comments
+2. This issue file (`trio/docs/programme/issues/TRIO-010.md`) and its row in `STATUS.md`
 3. `trio/docs/rag/06-AURORA-SPEC.md` section "UI" and the UI items under "Tests"
 4. `trio/docs/rag/00-CHARTER.md` (AURORA column and difference contract)
 5. `trio/docs/rag/04-TUI-UX-CONTRACT.md` sections "Philosophy", "App shell"
@@ -56,9 +57,9 @@ full-width on-screen piano, four skins and the shared CLI, so `aurora` starts a 
 ## Acceptance criteria
 
 - `aurora` launches in a real terminal (manually smoke-tested by you if you have one; otherwise
-  state "not exercised" in the PR) and all headless tests pass.
+  state "not exercised" in the review record) and all headless tests pass.
 - Matches the AURORA column of the difference contract; nothing copied from LOOM/DRIFT layouts.
-- `python trio/tools/check.py --package all` green; both CI workflows green.
+- `python trio/tools/ci.py` green on every lane.
 
 ## Out of scope
 

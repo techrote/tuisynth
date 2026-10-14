@@ -10,8 +10,9 @@ Retrieval scope: everything under `trio/`. These documents are the design author
 TRIO implementation programme. They do **not** describe `cpusynth/`, `padsynth/` or
 `niceglitchsynth/`, which have their own corpora and must not be modified.
 
-Authority order: current `main` branch code and tests; the GitHub issue being executed and its
-comments; [`trio/AGENTS.md`](../../AGENTS.md); these RAG documents;
+Authority order: current local `main` code and tests; the issue file being executed
+(`trio/docs/programme/issues/TRIO-0NN.md`) and its `STATUS.md` notes;
+[`trio/AGENTS.md`](../../AGENTS.md); these RAG documents;
 [the programme](../programme/IMPLEMENTATION-PROGRAMME.md).
 
 | Need | Document | Retrieval ID |
@@ -28,6 +29,7 @@ comments; [`trio/AGENTS.md`](../../AGENTS.md); these RAG documents;
 | Stretch: sequencer, modulation, post-processing | [09-SEQUENCER-MODULATION-SPEC.md](09-SEQUENCER-MODULATION-SPEC.md) | TRIO-SEQMOD |
 | Test layers, CI, packaging, release, provenance | [10-TESTING-CI-RELEASE.md](10-TESTING-CI-RELEASE.md) | TRIO-TEST |
 | Recovered-synth defects mapped to contracts | [11-LESSONS-FROM-RECOVERY.md](11-LESSONS-FROM-RECOVERY.md) | TRIO-LESSONS |
+| Local VM workflow, LM Studio host, model roster, OpenCode config | [12-LOCAL-WORKFLOW-AND-MODELS.md](12-LOCAL-WORKFLOW-AND-MODELS.md) | TRIO-LOCAL |
 
-If code and a RAG document disagree, the PR that changes the contract must update the RAG
-document in the same PR and say so in its description.
+If code and a RAG document disagree, the branch that changes the contract must update the
+RAG document on the same branch and list it under "Contract changes" in its review record.

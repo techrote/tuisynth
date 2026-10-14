@@ -1,16 +1,17 @@
 # [TRIO-016] Stretch: modulation oscillators, matrix and post-processing
 
-Work in `techrote/tuisynth` on **TRIO-016** and complete it end-to-end: implementation,
-tests, pull request, CI fixes and merge after every automated check is green.
+Work in your local clone of `techrote/tuisynth` on **TRIO-016** and complete it end-to-end with the
+local workflow in `trio/AGENTS.md`: implementation, tests, local CI, fixes, review record and
+local squash-merge into `main` once every `trio/tools/ci.py` lane is green.
 
 ## Depends on
 
-- TRIO-015 (#16) must be closed.
+- TRIO-015 (#16) must be `done` in `trio/docs/programme/STATUS.md`.
 
 ## Read first
 
 1. `trio/AGENTS.md`
-2. This issue and all comments
+2. This issue file (`trio/docs/programme/issues/TRIO-016.md`) and its row in `STATUS.md`
 3. `trio/docs/rag/09-SEQUENCER-MODULATION-SPEC.md` section "Modulation oscillators, matrix
    and post-processing"
 4. `trio/docs/rag/02-AUDIO-ENGINE-CONTRACT.md` sections "Parameters" (`modulatable`),
@@ -53,14 +54,14 @@ default).
   rack.
 - `trio/kit/tests/mod/test_mod_presets.py`: matrix and rack order round-trip.
 - Per instrument `tests/test_mod_ui.py`: SGR routing/reordering; golden snapshot of the MOD area;
-  `test_default_sound_unchanged` (a factory preset renders bit-identically to before this PR -
-  store a short checksum fixture generated from `main` before your changes).
+  `test_default_sound_unchanged` (a factory preset renders bit-identically to before this issue -
+  store a short checksum fixture generated from local `main` before your changes).
 
 ## Acceptance criteria
 
 - Default sound of every factory preset unchanged; all earlier tests green.
 - Visual identity per instrument preserved.
-- `python trio/tools/check.py --package all` green; both CI workflows green.
+- `python trio/tools/ci.py` green on every lane.
 
 ## Out of scope
 
