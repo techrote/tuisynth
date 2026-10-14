@@ -189,9 +189,9 @@ def test_headless_screen_render_and_quit(screen, monkeypatch):
     from prompt_toolkit.output import DummyOutput
     from padsynth.ui import PadSynthApp
     from padsynth.demo import DemoTransport
-    import threading
-    # Suppress only the UI refresh thread; paint synchronously and send real key input.
-    monkeypatch.setattr(threading.Thread, "start", lambda self: None)
+    # Suppress this app's refresh work, not threading globally: Windows pipe
+    # input needs prompt-toolkit's executor thread to deliver the quit key.
+    monkeypatch.setattr(PadSynthApp, "_refresh_loop", lambda self: None)
     e = engine()
     with create_pipe_input() as inp, create_app_session(input=inp, output=DummyOutput()):
         app = PadSynthApp(e, load_preset(list_presets()[0]), load_theme(list_themes()[0]),
