@@ -1,0 +1,71 @@
+.............................................F                           [100%]
+=================================== FAILURES ===================================
+____________________ test_e2e_piano_mouse_white_black_safe _____________________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7ff9f48a59d0>
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-1/test_e2e_piano_mouse_white_bla0')
+
+    def test_e2e_piano_mouse_white_black_safe(monkeypatch, tmp_path):
+        seen = {}
+    
+        def fake_audition(patch, notes, seconds, sr, seed, backend, loop=False, notify=None):
+            seen.setdefault("hits", []).append((notes[0]["midi"], round(notes[0]["vel"], 3)))
+            if notify is not None:
+                notify()
+    
+        monkeypatch.setattr(padsynth, "audition_async", fake_audition)
+        # piano-only layout on the 80x40 headless screen: the empty tile slot
+        # fills the middle, so the bottom-docked piano frame sits at rows 29-38
+        # and its content at rows 30-37 (1-based 31-38).
+        # (14,32): white E4, gradient vel 0.65. (7,31): black C#4, vel 0.475.
+        # (14,38): white E4 in the safe zone, vel 1.0.
+        feed = ("\x1b[<0;14;32M\x1b[<0;14;32m"
+                "\x1b[<0;7;31M\x1b[<0;7;31m"
+                "\x1b[<0;14;38M\x1b[<0;14;38m\x11")
+        rc = _e2e_run_piano_only(monkeypatch, tmp_path, feed)
+        assert rc == 0
+>       assert [h[0] for h in seen["hits"]] == [64, 61, 64], seen
+E       AssertionError: {'hits': [(60, 0.475), (60, 0.475), (60, 0.475)]}
+E       assert [60, 60, 60] == [64, 61, 64]
+E         
+E         At index 0 diff: 60 != 64
+E         
+E         Full diff:
+E           [
+E         -     64,
+E         ?      ^
+E         +     60,
+E         ?      ^
+E         -     61,
+E         ?      ^
+E         +     60,
+E         ?      ^
+E         -     64,
+E         ?      ^
+E         +     60,
+E         ?      ^
+E           ]
+
+/mnt/data/tuisynth/padsynth/tests/test_padsynth.py:635: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_padsynth.py::test_e2e_piano_mouse_white_black_safe - AssertionError: {'hits': [(60, 0.475), (60, 0.475), (60, 0.475)]}
+assert [60, 60, 60] == [64, 61, 64]
+  
+  At index 0 diff: 60 != 64
+  
+  Full diff:
+    [
+  -     64,
+  ?      ^
+  +     60,
+  ?      ^
+  -     61,
+  ?      ^
+  +     60,
+  ?      ^
+  -     64,
+  ?      ^
+  +     60,
+  ?      ^
+    ]
+1 failed, 45 passed in 8.43s

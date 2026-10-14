@@ -1,0 +1,147 @@
+{
+  "schema": "tuisynth-import/1",
+  "synth": "cpusynth",
+  "archive": "cpusynth.zip",
+  "archive_sha256": "85b1213e2fe88940aac8ae2896d80ff03cf19144807a7da3fa54f32bfc821f61",
+  "origin": "Owner upload in this conversation, 2026-10-14",
+  "model_attribution": "Unverified; owner identifies OpenCode free-tier provenance.",
+  "retained_count": 26,
+  "excluded_file_counts": {
+    ".git": 18,
+    ".venv": 2763,
+    "__pycache__": 12
+  },
+  "exclusion_policy": "Do not publish machine-specific virtual environments, native dependency binaries, empty nested Git metadata, bytecode, caches or runtime locks/session state.",
+  "retained_files": [
+    {
+      "path": ".gitignore",
+      "bytes": 79,
+      "sha256": "caf9ebd671f761d7b37b9a2c3f267439ec72af9082c38133448cedce40aee0ed"
+    },
+    {
+      "path": "padsynth/demo.py",
+      "bytes": 5570,
+      "sha256": "a5fad2a04ebe4bcd43c07432c302ea99dd7ce094f8ba191a5da31475bde0e327"
+    },
+    {
+      "path": "padsynth/engine/core.py",
+      "bytes": 6107,
+      "sha256": "52514757cd70377c5d37b716f1a873bfff726f184165beedbd9909cae6517fb3"
+    },
+    {
+      "path": "padsynth/engine/fx.py",
+      "bytes": 6457,
+      "sha256": "ffdd6aa7b19836b62e821d38905e79ec388bb83d4e875f01e6730dcabfc2dbc1"
+    },
+    {
+      "path": "padsynth/engine/synth.py",
+      "bytes": 13702,
+      "sha256": "8645f4762fb5770f5dfbcfc753294218c7bf8e3c738f6887e1b567323e38ff2e"
+    },
+    {
+      "path": "padsynth/engine/__init__.py",
+      "bytes": 96,
+      "sha256": "cdc3963e4cc69ca4ebeec49000d841015ba1880751c856f938a67fbefc58b8cb"
+    },
+    {
+      "path": "padsynth/midi.py",
+      "bytes": 2665,
+      "sha256": "4702c6d9fe2502a8b5fab887f675c8bbf273c95a5c6dc619f2ac0226f913fa5f"
+    },
+    {
+      "path": "padsynth/param.py",
+      "bytes": 8348,
+      "sha256": "fe34d2453ffa45c974518210b64b8a64882d1dd2e7fa0f8ed454a363200315be"
+    },
+    {
+      "path": "padsynth/themes.py",
+      "bytes": 10568,
+      "sha256": "cc79cee60b5f201ce255d2893df1239f49f824f01dc950c0aa4c556991c68136"
+    },
+    {
+      "path": "padsynth/ui.py",
+      "bytes": 41488,
+      "sha256": "d038607b5523b47916f110c5f7eb90703da061bcb6ae0deefa898fe5ea23dc70"
+    },
+    {
+      "path": "padsynth/util.py",
+      "bytes": 864,
+      "sha256": "e9848479485b1549edbda6c3004d89addaf7e51e57972c29234a16b92276fbef"
+    },
+    {
+      "path": "padsynth/__init__.py",
+      "bytes": 94,
+      "sha256": "83b3adc4d558cfaa47cb66cfaa9deb0e0cb9b5f5e35fbe8453929048d0981527"
+    },
+    {
+      "path": "padsynth/__main__.py",
+      "bytes": 2223,
+      "sha256": "08a8d4c5ab91833004e92f35bd2bf8b074f11f1611875ada62868a47139b1810"
+    },
+    {
+      "path": "presets/gale-ambience.json",
+      "bytes": 1724,
+      "sha256": "ac580d89ff410b2f168232ce3364873a97ec5875546c27c072823a304cb45a44"
+    },
+    {
+      "path": "presets/hollow-pad.json",
+      "bytes": 1720,
+      "sha256": "609312c1e72b946532b41696bbaf1a759022f584e699830ba5019e418173b434"
+    },
+    {
+      "path": "presets/upper-air.json",
+      "bytes": 1749,
+      "sha256": "96e234138cf837c7a55ee3adb9c9ee4b3c08ef3386bfbd44bc08b87f9b414f4e"
+    },
+    {
+      "path": "presets/veil-string.json",
+      "bytes": 1754,
+      "sha256": "c7aaacfd1c8db584619556792bc306091e2efcf0bcb4cf3a6322eea2dcf21be0"
+    },
+    {
+      "path": "pyproject.toml",
+      "bytes": 520,
+      "sha256": "968a7ed1e09ec3ddb6f5e74a842e3e9981bfcd033b5f42ff8e8a68a514282641"
+    },
+    {
+      "path": "README.md",
+      "bytes": 4635,
+      "sha256": "459757a2c7f3c75d018245e13b617d5bbdab9feb66fc0b288ebc40ab489fcbe8"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 74,
+      "sha256": "e358070a8aae901820d94523945a13f54f7ef135673564ad89d9fad23b8c55c5"
+    },
+    {
+      "path": "Setup.cmd",
+      "bytes": 513,
+      "sha256": "eb94869c43d12b00b025d24531555507cb2cfd772aa3b4afc570b71f84086aff"
+    },
+    {
+      "path": "Start.cmd",
+      "bytes": 245,
+      "sha256": "595efb1ab71b9eef5b98364797d0b812aafad23e6f7b34bb2adc0172f720eae0"
+    },
+    {
+      "path": "themes/cyber-weather.toml",
+      "bytes": 1539,
+      "sha256": "9a09d611a9e481b816f761c480bd55cf1aa9d3e4b86bb0d9827103cccff9d2fc"
+    },
+    {
+      "path": "themes/permutation-weather.toml",
+      "bytes": 1458,
+      "sha256": "f17c8270d9233920bb6dcf93d2e3bc873cdf3199a3f766cee0cc5dcfe7df0d3e"
+    },
+    {
+      "path": "themes/restrained-monochrome.toml",
+      "bytes": 1171,
+      "sha256": "88e17bf131316e2e075fdcda9ea4571716dcf42e912052a539740be4998d0639"
+    },
+    {
+      "path": "themes/second-order-weather.toml",
+      "bytes": 1473,
+      "sha256": "5510e13bcc903d833c36f396ae9859c54627be8c3456cfc66cec5fa6decb4ac9"
+    }
+  ]
+}

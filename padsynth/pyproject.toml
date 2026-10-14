@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "padsynth"
+version = "0.1.0"
+description = "Cell-native pads/strings/air/ambience synthesiser for the terminal"
+requires-python = ">=3.11"
+dependencies = ["prompt-toolkit>=3.0.53,<4"]
+
+[project.scripts]
+padsynth = "padsynth:main"
+
+[project.optional-dependencies]
+test = ["pytest>=8,<10"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 110
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F"]

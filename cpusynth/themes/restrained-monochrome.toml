@@ -1,0 +1,55 @@
+schema = "md-editor-theme/1.1"
+id = "restrained-monochrome"
+name = "RESTRAINED MONOCHROME"
+description = "mdbm-parity skin: one hue ladder, no decoration."
+fps = 12
+
+[palette]
+bg = "#0a0a0a"
+fg = "#c8c8c8"
+dim = "#6a6a6a"
+border = "#333333"
+bright = "#ffffff"
+selbg = "#1c1c1c"
+warn = "#aaaaaa"
+ok = "#d0d0d0"
+
+[styles]
+background = { bg = "bg" }
+text = { fg = "fg" }
+muted = { fg = "dim" }
+border = { fg = "border" }
+title = { fg = "bright", bold = true }
+accent = { fg = "fg" }
+heading = { fg = "fg", bold = true }
+code = { fg = "fg" }
+link = { fg = "fg", underline = true }
+quote = { fg = "dim", italic = true }
+status = { fg = "ok" }
+warning = { fg = "warn" }
+error = { fg = "bright", bold = true }
+selected = { fg = "bright", bg = "selbg" }
+focused = { fg = "bright", bold = true }
+hover = { fg = "fg" }
+pressed = { fg = "bright", bg = "selbg" }
+disabled = { fg = "dim" }
+
+[geometry]
+outer = [0, 0, 0, 0]
+border = 1
+divider = 1
+spacer = 0
+
+[glyphs.divider]
+symbols = ["-", "─"]
+on = "-"
+off = "-"
+
+[fallbacks.ascii]
+glyph = { divider = "-" }
+
+[fallbacks.monochrome]
+palette = { bg = "#000000", fg = "#ffffff", dim = "#888888" }
+
+[fallbacks.narrow]
+hide_layers = []

@@ -1,0 +1,3 @@
+# Preserve uploaded source bytes, including original line endings, on all hosts.
+* -text
+*.wav binary

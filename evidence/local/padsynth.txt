@@ -1,0 +1,8 @@
+.............................................x.....xxxx..                [100%]
+=========================== short test summary info ============================
+XFAIL tests/test_padsynth.py::test_e2e_piano_mouse_white_black_safe - PAD-001: supplied headless SGR piano mouse acceptance fails on prompt-toolkit 3.0.53
+XFAIL tests/test_review.py::test_malformed_graph_returns_diagnostics_not_exception[unhashable-id] - PAD-002: malformed graph fields crash validator instead of returning errors
+XFAIL tests/test_review.py::test_malformed_graph_returns_diagnostics_not_exception[unhashable-type] - PAD-002: malformed graph fields crash validator instead of returning errors
+XFAIL tests/test_review.py::test_malformed_graph_returns_diagnostics_not_exception[nonobject-inputs] - PAD-002: malformed graph fields crash validator instead of returning errors
+XFAIL tests/test_review.py::test_malformed_graph_returns_diagnostics_not_exception[unhashable-target] - PAD-002: malformed graph fields crash validator instead of returning errors
+52 passed, 5 xfailed in 8.63s

@@ -1,0 +1,53 @@
+{
+  "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+  "preserved_files": 71,
+  "hardware_audio_tested": false,
+  "midi_hardware_tested": false,
+  "packages": {
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "prompt-toolkit": "3.0.53",
+    "wcwidth": "0.8.3",
+    "pytest": "9.0.2",
+    "setuptools": "82.0.1"
+  },
+  "suites": {
+    "cpusynth": {
+      "exit_code": 0,
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "-rx",
+        "tests",
+        "--junitxml=/mnt/data/tuisynth/evidence/local/cpusynth.xml"
+      ]
+    },
+    "padsynth": {
+      "exit_code": 0,
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "-rx",
+        "tests",
+        "--junitxml=/mnt/data/tuisynth/evidence/local/padsynth.xml"
+      ]
+    },
+    "niceglitchsynth": {
+      "exit_code": 0,
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "-rx",
+        "tests",
+        "--junitxml=/mnt/data/tuisynth/evidence/local/niceglitchsynth.xml"
+      ]
+    }
+  }
+}

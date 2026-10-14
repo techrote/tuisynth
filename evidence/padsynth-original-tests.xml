@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="46" time="8.411" timestamp="2026-10-14T15:55:39.297591+00:00" hostname="a3487552aa98"><testcase classname="tests.test_padsynth" name="test_factory_patches_validate" time="0.060" /><testcase classname="tests.test_padsynth" name="test_patch_needs_output" time="0.001" /><testcase classname="tests.test_padsynth" name="test_bad_patches_rejected[&lt;lambda&gt;0]" time="0.001" /><testcase classname="tests.test_padsynth" name="test_bad_patches_rejected[&lt;lambda&gt;1]" time="0.001" /><testcase classname="tests.test_padsynth" name="test_bad_patches_rejected[&lt;lambda&gt;2]" time="0.001" /><testcase classname="tests.test_padsynth" name="test_bad_patches_rejected[&lt;lambda&gt;3]" time="0.001" /><testcase classname="tests.test_padsynth" name="test_bad_patches_rejected[&lt;lambda&gt;4]" time="0.001" /><testcase classname="tests.test_padsynth" name="test_cycle_rejected" time="0.001" /><testcase classname="tests.test_padsynth" name="test_node_order_independent" time="0.086" /><testcase classname="tests.test_padsynth" name="test_render_deterministic_bounded[weather-machine]" time="0.263" /><testcase classname="tests.test_padsynth" name="test_render_deterministic_bounded[needle-rain]" time="0.261" /><testcase classname="tests.test_padsynth" name="test_render_deterministic_bounded[ion-cell]" time="0.289" /><testcase classname="tests.test_padsynth" name="test_render_deterministic_bounded[cyan-fog]" time="0.280" /><testcase classname="tests.test_padsynth" name="test_render_deterministic_bounded[amber-strike]" time="0.255" /><testcase classname="tests.test_padsynth" name="test_render_seed_matters" time="0.053" /><testcase classname="tests.test_padsynth" name="test_note_parsing" time="0.001" /><testcase classname="tests.test_padsynth" name="test_write_wav" time="0.025" /><testcase classname="tests.test_padsynth" name="test_shipped_themes_valid" time="0.023" /><testcase classname="tests.test_padsynth" name="test_unknown_theme_field_rejected" time="0.002" /><testcase classname="tests.test_padsynth" name="test_failed_theme_keeps_current" time="0.002" /><testcase classname="tests.test_padsynth" name="test_theme_slot_alias_warned" time="0.001" /><testcase classname="tests.test_padsynth" name="test_config_missing_gives_defaults_with_diag" time="0.001" /><testcase classname="tests.test_padsynth" name="test_config_invalid_values_fall_back" time="0.001" /><testcase classname="tests.test_padsynth" name="test_parity_clean" time="0.001" /><testcase classname="tests.test_padsynth" name="test_snapshot_deterministic_sized" time="0.190" /><testcase classname="tests.test_padsynth" name="test_pad_chords_sane" time="0.001" /><testcase classname="tests.test_padsynth" name="test_tui_param_commands" time="0.002" /><testcase classname="tests.test_padsynth" name="test_tui_octave_vel_layout_quit" time="0.002" /><testcase classname="tests.test_padsynth" name="test_tui_theme_next_rejects_gracefully" time="0.003" /><testcase classname="tests.test_padsynth" name="test_cli_paths" time="0.227" /><testcase classname="tests.test_padsynth" name="test_tui_builds_without_terminal" time="0.096" /><testcase classname="tests.test_padsynth" name="test_tui_pad_trigger_renders" time="0.003" /><testcase classname="tests.test_padsynth" name="test_e2e_keyboard_triggers_pad" time="0.056" /><testcase classname="tests.test_padsynth" name="test_e2e_mouse_click_triggers_pad" time="0.052" /><testcase classname="tests.test_padsynth" name="test_e2e_mouse_cell_geometry" time="0.113" /><testcase classname="tests.test_padsynth" name="test_e2e_full_layout_paints_and_overlays" time="0.129" /><testcase classname="tests.test_padsynth" name="test_e2e_slider_click_reaches_sound" time="0.068" /><testcase classname="tests.test_padsynth" name="test_medley_deterministic" time="0.955" /><testcase classname="tests.test_padsynth" name="test_medley_missing_patch_fails" time="0.001" /><testcase classname="tests.test_padsynth" name="test_cli_demo" time="1.489" /><testcase classname="tests.test_padsynth" name="test_cli_demo_play_null" time="1.498" /><testcase classname="tests.test_padsynth" name="test_tui_demo_medley_plays" time="1.573" /><testcase classname="tests.test_padsynth" name="test_piano_geometry_units" time="0.000" /><testcase classname="tests.test_padsynth" name="test_piano_commands" time="0.002" /><testcase classname="tests.test_padsynth" name="test_e2e_tracker_keyboard" time="0.071" /><testcase classname="tests.test_padsynth" name="test_e2e_piano_mouse_white_black_safe" time="0.058"><failure message="AssertionError: {'hits': [(60, 0.475), (60, 0.475), (60, 0.475)]}&#10;assert [60, 60, 60] == [64, 61, 64]&#10;  &#10;  At index 0 diff: 60 != 64&#10;  &#10;  Full diff:&#10;    [&#10;  -     64,&#10;  ?      ^&#10;  +     60,&#10;  ?      ^&#10;  -     61,&#10;  ?      ^&#10;  +     60,&#10;  ?      ^&#10;  -     64,&#10;  ?      ^&#10;  +     60,&#10;  ?      ^&#10;    ]">monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x7ffa15f83110&gt;
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_e2e_piano_mouse_white_bla0')
+
+    def test_e2e_piano_mouse_white_black_safe(monkeypatch, tmp_path):
+        seen = {}
+    
+        def fake_audition(patch, notes, seconds, sr, seed, backend, loop=False, notify=None):
+            seen.setdefault("hits", []).append((notes[0]["midi"], round(notes[0]["vel"], 3)))
+            if notify is not None:
+                notify()
+    
+        monkeypatch.setattr(padsynth, "audition_async", fake_audition)
+        # piano-only layout on the 80x40 headless screen: the empty tile slot
+        # fills the middle, so the bottom-docked piano frame sits at rows 29-38
+        # and its content at rows 30-37 (1-based 31-38).
+        # (14,32): white E4, gradient vel 0.65. (7,31): black C#4, vel 0.475.
+        # (14,38): white E4 in the safe zone, vel 1.0.
+        feed = ("\x1b[&lt;0;14;32M\x1b[&lt;0;14;32m"
+                "\x1b[&lt;0;7;31M\x1b[&lt;0;7;31m"
+                "\x1b[&lt;0;14;38M\x1b[&lt;0;14;38m\x11")
+        rc = _e2e_run_piano_only(monkeypatch, tmp_path, feed)
+        assert rc == 0
+&gt;       assert [h[0] for h in seen["hits"]] == [64, 61, 64], seen
+E       AssertionError: {'hits': [(60, 0.475), (60, 0.475), (60, 0.475)]}
+E       assert [60, 60, 60] == [64, 61, 64]
+E         
+E         At index 0 diff: 60 != 64
+E         
+E         Full diff:
+E           [
+E         -     64,
+E         ?      ^
+E         +     60,
+E         ?      ^
+E         -     61,
+E         ?      ^
+E         +     60,
+E         ?      ^
+E         -     64,
+E         ?      ^
+E         +     60,
+E         ?      ^
+E           ]
+
+/mnt/data/tuisynth/padsynth/tests/test_padsynth.py:635: AssertionError</failure></testcase></testsuite></testsuites>

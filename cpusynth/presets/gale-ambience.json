@@ -1,0 +1,37 @@
+{
+  "name": "Gale Ambience",
+  "char": "amb",
+  "morph": 0.0,
+  "a": {
+    "osc.wave": 0.5, "osc.unison": 5, "osc.detune": 22, "osc.sub": 0.15, "osc.noise": 0.25,
+    "filter.cut": 900, "filter.res": 0.4, "filter.envd": 0.6, "filter.key": 0.2,
+    "amp.a": 6.0, "amp.d": 4.0, "amp.s": 0.9, "amp.r": 9.0, "amp.vel": 0.15,
+    "flt.a": 6.0, "flt.d": 5.0, "flt.s": 0.6, "flt.r": 8.0, "flt.amt": 0.55,
+    "l1.rate": 0.05, "l1.wave": 0, "l1.tgt": 1, "l1.dep": 0.9,
+    "l2.rate": 0.09, "l2.wave": 0, "l2.tgt": 0, "l2.dep": 0.2,
+    "pan.base": 0.0, "pan.spread": 0.9,
+    "fx.chorus.mix": 0.3, "fx.chorus.rate": 0.6, "fx.chorus.depth": 0.006,
+    "fx.delay.time": 0.9, "fx.delay.fb": 0.45, "fx.delay.mix": 0.3,
+    "fx.reverb.size": 1.55, "fx.reverb.damp": 0.3, "fx.reverb.mix": 0.65,
+    "master.level": 0.85, "master.drive": 0.15
+  },
+  "b": {
+    "osc.wave": 0.65, "osc.unison": 6, "osc.detune": 30, "osc.sub": 0.1, "osc.noise": 0.35,
+    "filter.cut": 2400, "filter.res": 0.45, "filter.envd": 0.7, "filter.key": 0.3,
+    "amp.a": 8.0, "amp.d": 5.0, "amp.s": 0.9, "amp.r": 12.0, "amp.vel": 0.12,
+    "flt.a": 8.0, "flt.d": 6.0, "flt.s": 0.65, "flt.r": 11.0, "flt.amt": 0.7,
+    "l1.rate": 0.04, "l1.wave": 1, "l1.tgt": 1, "l1.dep": 0.95,
+    "l2.rate": 0.07, "l2.wave": 1, "l2.tgt": 2, "l2.dep": 0.6,
+    "pan.base": 0.0, "pan.spread": 1.0,
+    "fx.chorus.mix": 0.4, "fx.chorus.rate": 0.45, "fx.chorus.depth": 0.008,
+    "fx.delay.time": 1.2, "fx.delay.fb": 0.5, "fx.delay.mix": 0.38,
+    "fx.reverb.size": 1.6, "fx.reverb.damp": 0.28, "fx.reverb.mix": 0.75,
+    "master.level": 0.88, "master.drive": 0.18
+  },
+  "macros": {
+    "filter.cut": 19000.0,
+    "osc.detune": 40.0,
+    "fx.reverb.mix": 1.0,
+    "l1.dep": 1.0
+  }
+}
